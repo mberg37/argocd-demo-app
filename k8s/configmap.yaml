@@ -64,9 +64,10 @@ data:
     </head>
     <body>
         <div class="container">
-            <div class="emoji">🚀</div>
+            <div class="emoji">✨</div>
             <h1>GitOps Demo</h1>
             <p>Velkommen til ArgoCD demo applikationen!</p>
+            <p style="color: #FFD700; font-weight: bold;">🎉 GitOps Works! Automatisk opdateret fra GitHub! 🎉</p>
             <div>
                 <span class="badge">✅ Kubernetes</span>
                 <span class="badge">✅ ArgoCD</span>
@@ -76,7 +77,7 @@ data:
             <p>Denne side er deployed via GitOps workflow:</p>
             <p><strong>GitHub → ArgoCD → Kubernetes → Production</strong></p>
             <div class="date">
-                Deployed: 02-12-2025 🎉
+                Sidst opdateret via GitOps: 02-12-2025 kl. 18:58 ⚡
             </div>
         </div>
     </body>
