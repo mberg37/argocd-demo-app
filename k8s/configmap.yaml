@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: demo-app-html
+  namespace: demo
+data:
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="da">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ArgoCD Demo - berg-lab.com</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                color: white;
+            }
+            .container {
+                text-align: center;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 20px;
+                padding: 50px;
+                box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                border: 1px solid rgba(255, 255, 255, 0.18);
+                max-width: 600px;
+            }
+            h1 {
+                font-size: 3em;
+                margin-bottom: 20px;
+                text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            }
+            p {
+                font-size: 1.2em;
+                line-height: 1.6;
+                margin: 20px 0;
+            }
+            .badge {
+                display: inline-block;
+                background: rgba(255, 255, 255, 0.2);
+                padding: 10px 20px;
+                border-radius: 25px;
+                margin: 10px;
+                font-weight: bold;
+            }
+            .date {
+                margin-top: 30px;
+                font-size: 0.9em;
+                opacity: 0.8;
+            }
+            .emoji {
+                font-size: 4em;
+                margin: 20px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="emoji">🚀</div>
+            <h1>GitOps Demo</h1>
+            <p>Velkommen til ArgoCD demo applikationen!</p>
+            <div>
+                <span class="badge">✅ Kubernetes</span>
+                <span class="badge">✅ ArgoCD</span>
+                <span class="badge">✅ Traefik</span>
+                <span class="badge">✅ HTTPS</span>
+            </div>
+            <p>Denne side er deployed via GitOps workflow:</p>
+            <p><strong>GitHub → ArgoCD → Kubernetes → Production</strong></p>
+            <div class="date">
+                Deployed: 02-12-2025 🎉
+            </div>
+        </div>
+    </body>
+    </html>

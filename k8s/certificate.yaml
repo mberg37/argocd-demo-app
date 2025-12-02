@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: demo-app-certificate
+  namespace: demo
+spec:
+  secretName: demo-app-tls-secret
+  issuerRef:
+    name: cloudflare-clusterissuer
+    kind: ClusterIssuer
+  dnsNames:
+    - demo.hl.berg-lab.com

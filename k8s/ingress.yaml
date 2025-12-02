@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-app-ingress
+  namespace: demo
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web,websecure
+    traefik.ingress.kubernetes.io/router.middlewares: kube-system-default-https-redirect@kubernetescrd
+spec:
+  rules:
+    - host: demo.hl.berg-lab.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: demo-app-service
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - demo.hl.berg-lab.com
+      secretName: demo-app-tls-secret
